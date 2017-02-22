@@ -1,0 +1,23 @@
+/* ===========================
+   Settings
+   =========================== */
+
+@charset "UTF-8";
+
+/* Font */
+$font: 'Source Sans Pro', 'Helvetica', sans-serif;
+
+/* Colors */
+
+/* Graphic chart */
+$red: #df2e30;
+$blue: #1894c4;
+$facebook: #3b5998;
+$twitter: #43bfe1;
+
+$color1: $red;
+$color2: $blue;
+
+/* Grid */
+
+/* Utility Functions */
