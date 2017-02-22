@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     ],
 
 gulp.task('css', function() {
-  return gulp.src('styles/styles.css')
+  return gulp.src('src/styles/styles.css')
     .pipe(postcss(plugins))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cssnano())
@@ -19,7 +19,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('styles/**/*.css', ['css']);
+  gulp.watch('src/styles/**/*.css', ['css']);
 });
 
 gulp.task('default', ['watch']);
