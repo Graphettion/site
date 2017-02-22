@@ -15,7 +15,7 @@ gulp.task('css', function() {
     .pipe(postcss(plugins))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cssnano())
-    .pipe(gulp.dest('public/css'))
+    .pipe(gulp.dest('css'))
 });
 
 gulp.task('watch', function() {
