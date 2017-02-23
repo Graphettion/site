@@ -3,4 +3,12 @@
    =========================== */
 
 nav {
+  ul {
+    text-align: right;
+    li {
+      display: inline;
+      font-size: 1.2em;
+      padding: 0 1em;
+    }
+  }
 }

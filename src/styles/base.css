@@ -5,3 +5,24 @@
 body {
   font-family: $font;
 }
+
+a {
+  color: #666;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    line-height: 0.75em;
+    a {
+      transition: 1s;
+      &:hover {
+        color: #222;
+        transition: 1s;
+      }
+    }
+  }
+}
