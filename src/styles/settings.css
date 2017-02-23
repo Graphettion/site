@@ -4,6 +4,16 @@
 
 @charset "UTF-8";
 
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('../../assets/fonts/SourceSansPro-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../../assets/fonts/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../assets/fonts/SourceSansPro-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../assets/fonts/SourceSansPro-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../assets/fonts/SourceSansPro-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../assets/fonts/SourceSansPro-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 /* Font */
 $font: 'Source Sans Pro', 'Helvetica', sans-serif;
 
