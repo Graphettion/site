@@ -12,8 +12,7 @@
 @import "base";
 
 /* Layouts */
-@import "layout/constrained";
-@import "layout/home";
+@import "layout/grid";
 @import "layout/nav";
 
 /* Modules */

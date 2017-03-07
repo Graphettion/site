@@ -4,7 +4,6 @@
 
 .card {
   border: 1px solid #ddd;
-  padding: 2.375em;
   box-shadow: 10px 10px 30px -9px rgba(0, 0, 0, .4);
   transition: box-shadow 1s;
   &:hover {
@@ -13,10 +12,6 @@
 }
 
 .card-head  {
-
-}
-
-.card-title {
 
 }
 

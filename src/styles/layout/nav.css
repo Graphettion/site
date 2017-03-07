@@ -3,12 +3,30 @@
    =========================== */
 
 nav {
-  ul {
-    text-align: right;
-    li {
-      display: inline;
-      font-size: 1.2em;
-      padding: 0 1em;
+  display: flex;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 1.6em;
+  flex-grow: 1;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 200ms ease-out;
+}
+
+nav a:hover {
+  background: #f5d76e;
+  color: #222;
+  flex-grow: 1.8;
+  transition: all 200ms ease-out;
+}
+
+@media (max-width: 800px) {
+  nav {
+    flex-direction: column;
+    a {
+      padding: 0.5em;
     }
   }
 }

@@ -3,6 +3,7 @@
    =========================== */
 
 body {
+  background-image: url(//basehold.it/i/24);
   font-family: $font;
 }
 
@@ -16,7 +17,6 @@ ul {
   margin: 0;
   padding: 0;
   li {
-    line-height: 0.75em;
     a {
       transition: 1s;
       &:hover {
