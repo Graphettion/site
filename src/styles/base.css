@@ -3,8 +3,12 @@
    =========================== */
 
 body {
-  // background-image: url(//basehold.it/i/24);
+  background-image: url(//basehold.it/i/24);
   font-family: $font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
 }
 
 a {

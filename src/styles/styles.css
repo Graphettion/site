@@ -2,16 +2,17 @@
    Styles
    =========================== */
 
-/* Settings */
-@import "settings";
-
 /* Vendor */
 @import '../../node_modules/normalize.css/normalize';
+
+/* Settings */
+@import "settings";
 
 /* Base */
 @import "base";
 
 /* Layouts */
+@import "layout/header";
 @import "layout/grid";
 @import "layout/nav";
 
