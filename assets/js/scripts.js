@@ -37,12 +37,62 @@
         });
     }
 
+    function contactForm() {
+        const form = document.getElementById("contactForm")
+        const statusMessage = document.getElementById("statusMessage")
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault()
+            const submitButton = form.querySelector("button")
+            submitButton.disabled = true
+            submitButton.textContent = "Sending..."
+
+            try {
+                // Replace with your Google Form URL
+                const formUrl =
+                "https://docs.google.com/forms/d/e/1FAIpQLSeUcmFZsuOkSksGI3PrTk6ddpYW-5uXy9IjvecVn9q2JcwAfg/formResponse"
+                const formData = new FormData(form)
+
+                // Using fetch with no-cors mode since Google Forms doesn't support CORS
+                await fetch(formUrl, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: formData,
+                })
+
+                // Clear form and show success message
+                form.reset()
+                showStatus("Message sent successfully!", "success")
+            } catch (error) {
+                showStatus("Error sending message. Please try again.", "error")
+            } finally {
+                submitButton.disabled = false
+                submitButton.textContent = "Send Message"
+            }
+        })
+    }
+    
+
+      function showStatus(message, type) {
+        statusMessage.textContent = message
+        statusMessage.className = `status-message ${type}`
+        statusMessage.style.display = "block"
+
+        // Hide status message after 5 seconds
+        setTimeout(() => {
+          statusMessage.style.display = "none"
+        }, 5000)
+      }
+
     // Wait for DOM to be fully loaded before running any JavaScript
     document.addEventListener('DOMContentLoaded', function() {
-        // Theme toggle functionality
+        // theme toggle
         toggleTheme();
 
-        // Smooth scrolling functionality
+        // smooth scrolling
         smoothScrolling();
+
+        // contact form 
+        contactForm();
     });
 })();

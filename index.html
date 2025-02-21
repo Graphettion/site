@@ -171,7 +171,7 @@
                 </div>
             </div>
             
-            <form class="contact-form" method="POST" action="mailto:graphettion@gmail.com" enctype="multipart/form-data">
+            <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input 
@@ -216,6 +216,8 @@
                 </div>
                 
                 <button type="submit" class="submit-button">Send Message</button>
+
+                <div id="statusMessage" class="status-message" style="display: none;"></div>
             </form>
         </div>
     </section>
