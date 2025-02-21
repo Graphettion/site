@@ -9,6 +9,7 @@
             document.body.setAttribute('data-theme', theme);
             themeToggleButton.textContent = theme === 'dark' ? '☀️' : '🌙';
             localStorage.setItem('theme', theme);
+            document.getElementById('logo').src = theme === 'dark' ? 'assets/images/logo-white.png' : 'assets/images/logo-black.png';
         };
 
         if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
