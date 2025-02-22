@@ -327,6 +327,7 @@ footer {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: not-allowed;
 }
 
 .form-group {
@@ -338,6 +339,8 @@ footer {
     margin-bottom: 0.5rem;
     color: var(--text-color);
     font-weight: 500;
+    
+    cursor: not-allowed;
 }
 
 .form-group input,
@@ -350,6 +353,8 @@ footer {
     color: var(--text-color);
     font-family: inherit;
     transition: border-color 0.3s;
+
+    cursor: not-allowed;
 }
 
 .form-group input:focus,
@@ -361,6 +366,8 @@ footer {
 .form-group textarea {
     min-height: 150px;
     resize: vertical;
+
+    cursor: not-allowed;
 }
 
 .submit-button {
@@ -372,6 +379,8 @@ footer {
     cursor: pointer;
     font-weight: 500;
     transition: transform 0.3s, opacity 0.3s;
+
+    cursor: not-allowed;
 }
 
 .submit-button:hover {

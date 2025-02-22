@@ -38,38 +38,39 @@
     }
 
     function contactForm() {
-        const form = document.getElementById("contactForm")
-        const statusMessage = document.getElementById("statusMessage")
+        document.querySelector('.submit-button').disabled = true;
+        // const form = document.getElementById("contactForm")
+        // const statusMessage = document.getElementById("statusMessage")
 
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault()
-            const submitButton = form.querySelector("button")
-            submitButton.disabled = true
-            submitButton.textContent = "Sending..."
+        // form.addEventListener("submit", async (e) => {
+        //     e.preventDefault()
+        //     const submitButton = form.querySelector("button")
+        //     submitButton.disabled = true
+        //     submitButton.textContent = "Sending..."
 
-            try {
-                // Replace with your Google Form URL
-                const formUrl =
-                "https://docs.google.com/forms/d/e/1FAIpQLSeUcmFZsuOkSksGI3PrTk6ddpYW-5uXy9IjvecVn9q2JcwAfg/formResponse"
-                const formData = new FormData(form)
+        //     try {
+        //         // Replace with your Google Form URL
+        //         const formUrl =
+        //         "https://docs.google.com/forms/d/e/1FAIpQLSeUcmFZsuOkSksGI3PrTk6ddpYW-5uXy9IjvecVn9q2JcwAfg/formResponse"
+        //         const formData = new FormData(form)
 
-                // Using fetch with no-cors mode since Google Forms doesn't support CORS
-                await fetch(formUrl, {
-                    method: "POST",
-                    mode: "no-cors",
-                    body: formData,
-                })
+        //         // Using fetch with no-cors mode since Google Forms doesn't support CORS
+        //         await fetch(formUrl, {
+        //             method: "POST",
+        //             mode: "no-cors",
+        //             body: formData,
+        //         })
 
-                // Clear form and show success message
-                form.reset()
-                showStatus("Message sent successfully!", "success")
-            } catch (error) {
-                showStatus("Error sending message. Please try again.", "error")
-            } finally {
-                submitButton.disabled = false
-                submitButton.textContent = "Send Message"
-            }
-        })
+        //         // Clear form and show success message
+        //         form.reset()
+        //         showStatus("Message sent successfully!", "success")
+        //     } catch (error) {
+        //         showStatus("Error sending message. Please try again.", "error")
+        //     } finally {
+        //         submitButton.disabled = false
+        //         submitButton.textContent = "Send Message"
+        //     }
+        // })
     }
     
 
