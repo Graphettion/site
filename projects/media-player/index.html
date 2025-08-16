@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Media Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="media-player-container" id="mediaPlayer">
+        <div class="video-container" id="videoContainer">
+            <video class="video-element" id="videoElement">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                    type="video/mp4">
+                <track kind="subtitles"
+                    src="data:text/vtt;base64,V0VCVlRUCgowMDowMDowMS4wMDAgLS0+IDAwOjAwOjA1LjAwMAplbmdsaXNoIHN1YnRpdGxlcyBhdmFpbGFibGU="
+                    srclang="en" label="English" default>
+                <track kind="subtitles"
+                    src="data:text/vtt;base64,V0VCVlRUCgowMDowMDowMS4wMDAgLS0+IDAwOjAwOjA1LjAwMAplc3BhY29scyBlbiBle3BhIX1vbA=="
+                    srclang="es" label="Español">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="video-overlay"></div>
+            <div class="loading-spinner"></div>
+
+            <div class="play-button-overlay" id="playOverlay">
+                <div class="play-icon"></div>
+            </div>
+
+            <div class="controls" id="controls">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-filled" id="progressFilled">
+                            <div class="progress-thumb"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls-row">
+                    <button class="control-button" id="playBtn">
+                        <div class="icon-play" id="playIcon"></div>
+                    </button>
+
+                    <button class="control-button" id="rewindBtn" title="Rewind 10s">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12,5V1L7,6L12,11V7A6,6 0 0,1 18,13A6,6 0 0,1 12,19A6,6 0 0,1 6,13H4A8,8 0 0,0 12,21A8,8 0 0,0 20,13A8,8 0 0,0 12,5Z" />
+                            <text x="12" y="16" text-anchor="middle" font-size="6" fill="currentColor">10</text>
+                        </svg>
+                    </button>
+
+                    <button class="control-button" id="forwardBtn" title="Forward 10s">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12,5V1L17,6L12,11V7A6,6 0 0,0 6,13A6,6 0 0,0 12,19A6,6 0 0,0 18,13H20A8,8 0 0,1 12,21A8,8 0 0,1 4,13A8,8 0 0,1 12,5Z" />
+                            <text x="12" y="16" text-anchor="middle" font-size="6" fill="currentColor">10</text>
+                        </svg>
+                    </button>
+
+                    <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
+
+                    <div class="spacer"></div>
+
+                    <div class="dropdown" id="languageDropdown">
+                        <button class="dropdown-button" id="languageBtn">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V5H19V19M17,17V15.5H14.5V13.5H17V12H19V17H17M9.5,12H11V15.5H13V17H7V15.5H9.5V12Z" />
+                            </svg>
+                            EN
+                        </button>
+                        <div class="dropdown-menu" id="languageMenu">
+                            <div class="dropdown-item active" data-lang="en">English</div>
+                            <div class="dropdown-item" data-lang="es">Español</div>
+                            <div class="dropdown-item" data-lang="off">Off</div>
+                        </div>
+                    </div>
+
+                    <button class="control-button" id="ccBtn" title="Closed Captions">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path
+                                d="M18,11H16.5V10.5C16.5,9.7 15.8,9 15,9H13.5C12.7,9 12,9.7 12,10.5V13.5C12,14.3 12.7,15 13.5,15H15C15.8,15 16.5,14.3 16.5,13.5V13H18V13.5C18,15.2 16.7,16.5 15,16.5H13.5C11.8,16.5 10.5,15.2 10.5,13.5V10.5C10.5,8.8 11.8,7.5 13.5,7.5H15C16.7,7.5 18,8.8 18,10.5V11M9,11H7.5V10.5C7.5,9.7 6.8,9 6,9H4.5C3.7,9 3,9.7 3,10.5V13.5C3,14.3 3.7,15 4.5,15H6C6.8,15 7.5,14.3 7.5,13.5V13H9V13.5C9,15.2 7.7,16.5 6,16.5H4.5C2.8,16.5 1.5,15.2 1.5,13.5V10.5C1.5,8.8 2.8,7.5 4.5,7.5H6C7.7,7.5 9,8.8 9,10.5V11Z" />
+                        </svg>
+                    </button>
+
+                    <div class="volume-container" id="volumeContainer">
+                        <button class="control-button" id="volumeBtn">
+                            <svg class="icon" id="volumeIcon" viewBox="0 0 24 24">
+                                <path
+                                    d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+                            </svg>
+                        </button>
+                        <div class="volume-slider" id="volumeSlider">
+                            <div class="volume-filled" id="volumeFilled"></div>
+                        </div>
+                    </div>
+
+                    <button class="control-button" id="fullscreenBtn" title="Fullscreen">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path
+                                d="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    </script>
+</body>
+
+</html>

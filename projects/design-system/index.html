@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Carpet Design System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        🌓
+    </button>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="title-xl">Red Carpet Design System</h1>
+            <p class="text-lg text-secondary">A modern, accessible design system with Material Design influences, ripple
+                effects, and beautiful animations.</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-content">
+                <ul class="nav-list">
+                    <li><a href="#buttons" class="nav-link">Buttons</a></li>
+                    <li><a href="#cards" class="nav-link">Cards</a></li>
+                    <li><a href="#typography" class="nav-link">Typography</a></li>
+                    <li><a href="#colors" class="nav-link">Colors</a></li>
+                    <li><a href="#components" class="nav-link">Components</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Buttons Section -->
+        <section id="buttons">
+            <h2 class="title-lg">Buttons</h2>
+            <p class="text-secondary mb-6">The core of the Red Carpet UI system - buttons with Material Design ripple
+                effects and modern styling.</p>
+
+            <!-- Raised Buttons -->
+            <div class="card">
+                <div class="card-header">Raised Buttons</div>
+                <div class="card-content">
+                    <p class="text-sm text-muted mb-4">Primary action buttons with elevation and ripple effects</p>
+                    <div class="demo-buttons">
+                        <button class="rc-btn rc-btn-primary rc-btn-ripple">Primary</button>
+                        <button class="rc-btn rc-btn-secondary rc-btn-ripple">Secondary</button>
+                        <button class="rc-btn rc-btn-success rc-btn-ripple">Success</button>
+                        <button class="rc-btn rc-btn-info rc-btn-ripple">Info</button>
+                        <button class="rc-btn rc-btn-warning rc-btn-ripple">Warning</button>
+                        <button class="rc-btn rc-btn-danger rc-btn-ripple">Danger</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <div class="code-snippet">
+                    &lt;button class="rc-btn rc-btn-primary rc-btn-ripple"&gt;Primary&lt;/button&gt;
+                    &lt;button class="rc-btn rc-btn-secondary rc-btn-ripple"&gt;Secondary&lt;/button&gt;</div>
+            </div>
+
+            <!-- Flat Buttons -->
+            <div class="card">
+                <div class="card-header">Flat Buttons</div>
+                <div class="card-content">
+                    <p class="text-sm text-muted mb-4">Secondary actions with subtle styling and hover effects</p>
+                    <div class="demo-buttons">
+                        <button class="rc-btn rc-btn-flat rc-btn-primary rc-btn-ripple">Primary</button>
+                        <button class="rc-btn rc-btn-flat rc-btn-ripple">Default</button>
+                        <button class="rc-btn rc-btn-flat rc-btn-success rc-btn-ripple">Success</button>
+                        <button class="rc-btn rc-btn-flat rc-btn-danger rc-btn-ripple">Danger</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Sizes -->
+            <div class="card">
+                <div class="card-header">Button Sizes</div>
+                <div class="card-content">
+                    <div class="demo-buttons">
+                        <button class="rc-btn rc-btn-primary rc-btn-sm rc-btn-ripple">Small</button>
+                        <button class="rc-btn rc-btn-primary rc-btn-ripple">Default</button>
+                        <button class="rc-btn rc-btn-primary rc-btn-lg rc-btn-ripple">Large</button>
+                    </div>
+                    <button class="rc-btn rc-btn-primary rc-btn-block rc-btn-ripple mb-4">Full Width</button>
+                </div>
+            </div>
+
+            <!-- Loading Buttons -->
+            <div class="card">
+                <div class="card-header">Loading States</div>
+                <div class="card-content">
+                    <div class="demo-buttons">
+                        <button class="rc-btn rc-btn-primary" disabled>
+                            <span class="rc-loader mr-2">
+                                <svg class="rc-circular" viewBox="25 25 50 50">
+                                    <circle class="rc-path" cx="50" cy="50" r="20"></circle>
+                                </svg>
+                            </span>
+                            Loading...
+                        </button>
+                        <button class="rc-btn rc-btn-flat">
+                            <span class="rc-loader mr-2">
+                                <svg class="rc-circular" viewBox="25 25 50 50">
+                                    <circle class="rc-path" cx="50" cy="50" r="20"></circle>
+                                </svg>
+                            </span>
+                            Processing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section id="cards">
+            <h2 class="title-lg">Cards</h2>
+            <p class="text-secondary mb-6">Flexible content containers with subtle shadows and hover effects.</p>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-header">Basic Card</div>
+                    <div class="card-content">
+                        <p class="text-secondary">Cards provide a flexible foundation for displaying grouped
+                            information. They include subtle shadows and smooth hover animations.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Interactive Card</div>
+                    <div class="card-content">
+                        <p class="text-secondary mb-4">Cards can contain any type of content including buttons and
+                            interactive elements.</p>
+                        <button class="rc-btn rc-btn-primary rc-btn-sm rc-btn-ripple">Action</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-example">
+                <div class="code-snippet">
+                    &lt;div class="card"&gt;
+                    &lt;div class="card-header"&gt;Card Title&lt;/div&gt;
+                    &lt;div class="card-content"&gt;
+                    &lt;p&gt;Card content goes here.&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;</div>
+            </div>
+        </section>
+
+        <!-- Typography Section -->
+        <section id="typography">
+            <h2 class="title-lg">Typography</h2>
+            <p class="text-secondary mb-6">A consistent type scale with semantic color variants.</p>
+
+            <div class="card">
+                <div class="card-content">
+                    <h1 class="title-xl">Extra Large Title</h1>
+                    <h2 class="title-lg">Large Title</h2>
+                    <h3 class="title-md">Medium Title</h3>
+                    <h4 class="title-sm">Small Title</h4>
+                    <p class="text-lg">Large body text</p>
+                    <p>Default body text</p>
+                    <p class="text-sm">Small text</p>
+                    <p class="text-xs">Extra small text</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Text Colors</div>
+                <div class="card-content">
+                    <p class="text-primary">Primary text color</p>
+                    <p class="text-secondary">Secondary text color</p>
+                    <p class="text-muted">Muted text color</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colors Section -->
+        <section id="colors">
+            <h2 class="title-lg">Color System</h2>
+            <p class="text-secondary mb-6">Semantic colors that adapt to light and dark themes.</p>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-content">
+                        <div
+                            style="width: 100%; height: 60px; background: var(--primary); border-radius: 8px; margin-bottom: 1rem;">
+                        </div>
+                        <p class="title-sm">Primary</p>
+                        <p class="text-sm text-muted">Main brand color</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div
+                            style="width: 100%; height: 60px; background: var(--success); border-radius: 8px; margin-bottom: 1rem;">
+                        </div>
+                        <p class="title-sm">Success</p>
+                        <p class="text-sm text-muted">Positive actions</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div
+                            style="width: 100%; height: 60px; background: var(--danger); border-radius: 8px; margin-bottom: 1rem;">
+                        </div>
+                        <p class="title-sm">Danger</p>
+                        <p class="text-sm text-muted">Destructive actions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation -->
+        <section id="documentation" class="mb-8">
+            <h2 class="title-lg">Getting Started</h2>
+            <div class="card">
+                <div class="card-header">Installation</div>
+                <div class="card-content">
+                    <p class="mb-4">Include the Red Carpet CSS and JavaScript files in your project:</p>
+                    <div class="code-example">
+                        <div class="code-snippet">
+                            &lt;link rel="stylesheet" href="red-carpet.css"&gt;
+                            &lt;script src="red-carpet.js"&gt;&lt;/script&gt;</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Theme Support</div>
+                <div class="card-content">
+                    <p class="mb-4">Toggle between light and dark themes by adding the data-theme attribute:</p>
+                    <div class="code-example">
+                        <div class="code-snippet">
+                            // Light theme (default)
+                            &lt;html&gt;&lt;/html&gt;
+
+                            // Dark theme
+                            &lt;html data-theme="dark"&gt;&lt;/html&gt;</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

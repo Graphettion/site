@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA GIBS Satellite Viewer - Color Map Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <h1>NASA GIBS Satellite Viewer</h1>
+                </div>
+                <div class="header-controls">
+                    <a href="https://earthdata.nasa.gov" target="_blank">
+                        <i class="fas fa-database"></i> Data Source
+                    </a>
+                </div>
+            </div>
+        </header>
+        
+        <div class="map-container">
+            <div id="map"></div>
+            
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-layer-group"></i>
+                        Layer Settings
+                    </h3>
+                    
+                    <div class="control-group">
+                        <label for="datePicker">Imagery Date</label>
+                        <input type="date" id="datePicker" value="2023-07-15">
+                        <div class="info-text">Select date for satellite imagery</div>
+                    </div>
+                    
+                    <div class="toggle-container">
+                        <span>Show Satellite Imagery</span>
+                        <label class="switch">
+                            <input type="checkbox" id="layerToggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>Color Map</label>
+                        <div class="color-map-selector" id="colorMapSelector">
+                            <div class="color-map-item active" data-value="default">
+                                <div class="color-map-icon" style="background: linear-gradient(135deg, #4a6572, #1e3c72);">
+                                    <i class="fas fa-globe-americas" style="color: #bbdefb;"></i>
+                                </div>
+                                <span class="color-map-label">Natural</span>
+                            </div>
+                            <div class="color-map-item" data-value="falsecolor">
+                                <div class="color-map-icon" style="background: linear-gradient(135deg, #8e44ad, #3498db);">
+                                    <i class="fas fa-city" style="color: #bbdefb;"></i>
+                                </div>
+                                <span class="color-map-label">Urban</span>
+                            </div>
+                            <div class="color-map-item" data-value="ndvi">
+                                <div class="color-map-icon" style="background: linear-gradient(135deg, #27ae60, #f1c40f);">
+                                    <i class="fas fa-leaf" style="color: #bbdefb;"></i>
+                                </div>
+                                <span class="color-map-label">Vegetation</span>
+                            </div>
+                            <div class="color-map-item" data-value="mndwi">
+                                <div class="color-map-icon" style="background: linear-gradient(135deg, #2980b9, #1abc9c);">
+                                    <i class="fas fa-water" style="color: #bbdefb;"></i>
+                                </div>
+                                <span class="color-map-label">Water</span>
+                            </div>
+                        </div>
+                        <div class="visualization-info" id="visInfo">
+                            Natural Color: Shows Earth as seen by human eye
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Event Explorer
+                    </h3>
+                    
+                    <div class="events-container">
+                        <ul class="event-list" id="eventList">
+                            <!-- Events will be populated here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="event-info" id="eventInfo">
+                <div class="event-info-header">
+                    <h3 id="eventInfoName">Event Name</h3>
+                    <div class="close-info" id="closeInfo">×</div>
+                </div>
+                <div class="event-thumbnail" id="eventThumbnail"></div>
+                <div class="event-details" id="eventDetails">
+                    <!-- Details will be populated here -->
+                </div>
+            </div>
+            
+            <div class="status-bar">
+                <div class="status-indicator"></div>
+                <span>Connected to NASA GIBS - Imagery for 2023-07-15 (Natural Color)</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-tilelayer-wmts@1.0.0/dist/leaflet-tilelayer-wmts.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
